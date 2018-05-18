@@ -5,14 +5,22 @@ class Api::V1::ContractsController < ApplicationController
   end
 
   def create
-    byebug
     contract = Contract.new(
-      title: params[:title]
+      title: params['title'],
+      summary: params['summary'],
+      details: params['details'],
+      milestones: params['milestones'],
+      legal: params['legal'],
+      copyright: params['copyright'],
+      compensation: params['compensation'],
+      developer_id: params['developer_id'],
+      contractor_id: params['contractor_id'],
     )
+
     if contract.save
       render json: contract
     else
-      render json: {errors: ""}
+      render json: {errors: "you done goofed!"}
     end
   end
 
