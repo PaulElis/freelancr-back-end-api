@@ -29,10 +29,23 @@ class Api::V1::ContractsController < ApplicationController
     # render json: {contract: @contract, reviews: @contract.reviews}
   # end
 
-  def edit
-  end
-
   def update
+    contract = Contract.find(params[:id])
+    if contract.update(
+      title: params['title'],
+      summary: params['summary'],
+      details: params['details'],
+      milestones: params['milestones'],
+      legal: params['legal'],
+      copyright: params['copyright'],
+      compensation: params['compensation'],
+      developer_id: params['developer_id'],
+      contractor_id: params['contractor_id'],
+    )
+      render json: contract
+    else
+      render json: {errors: "you done goofed!"}
+    end
   end
 
   def destroy
