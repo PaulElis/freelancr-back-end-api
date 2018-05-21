@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       get '/login', to: "auth#login"
       post '/login', to: "auth#login"
       get '/get_user', to: "auth#get_user"
+      post '/signup', to: "users#create"
     end
   end
 
