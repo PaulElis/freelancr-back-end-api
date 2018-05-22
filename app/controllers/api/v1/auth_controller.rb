@@ -15,7 +15,7 @@ class Api::V1::AuthController < ApplicationController
 
 	def get_user
 		if user_in_session
-			render json: {user: user_in_session}
+			render json: user_in_session
 		else
 			render json: {error: "Ya dun goofed!"}
 		end
