@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 20180517135450) do
     t.datetime "creation_date"
     t.integer "developer_id"
     t.integer "contractor_id"
+    t.boolean "developer_signature"
+    t.boolean "contractor_signature"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
