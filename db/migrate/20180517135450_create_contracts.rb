@@ -13,6 +13,7 @@ class CreateContracts < ActiveRecord::Migration[5.1]
       t.integer :contractor_id
       t.boolean :developer_signature
       t.boolean :contractor_signature
+      t.boolean :approved
 
       t.timestamps
     end

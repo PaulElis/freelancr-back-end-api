@@ -17,6 +17,7 @@ class Api::V1::ContractsController < ApplicationController
       contractor_id: params['contractor_id'],
       developer_signature: params['developer_signature'],
       contractor_signature: params['contractor_signature'],
+      approved: params['approved'],
     )
 
     if contract.save
@@ -33,7 +34,7 @@ class Api::V1::ContractsController < ApplicationController
 
   def update
     contract = Contract.find(params[:id])
-  
+
     if contract.update(
       title: params['title'],
       summary: params['summary'],
@@ -46,6 +47,7 @@ class Api::V1::ContractsController < ApplicationController
       contractor_id: params['contractor_id'],
       developer_signature: params['developer_signature'],
       contractor_signature: params['contractor_signature'],
+      approved: params['approved'],
     )
       render json: contract
     else
